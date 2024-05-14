@@ -1,0 +1,16 @@
+// icon-size
+$icon-size: (
+  "10": $font-size-base * 1,
+  "14": $font-size-base * 1.4,
+  "20": $font-size-base * 2,
+  "32": $font-size-base * 3.2,
+  "40": $font-size-base * 4,
+  "48": $font-size-base * 4.8,
+);
+
+@each $key, $val in $icon-size {
+  .icon-size-#{$key} {
+    width: $val;
+    height: $val;
+  }
+}

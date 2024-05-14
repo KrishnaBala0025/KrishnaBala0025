@@ -1,0 +1,105 @@
+// @import '../custom';
+
+.btn {
+  @include rippleEffect;
+
+  &:focus-visible {
+    box-shadow: none !important;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    --bs-btn-disabled-color: #5c5c5c !important;
+    --bs-btn-disabled-bg: #bebebe !important;
+    --bs-btn-disabled-border-color: #bebebe !important;
+
+    @if $color == "light" or $color == "white" {
+      @include button-variant(
+        $value,
+        $value,
+        $hover-background: rgba(var(--bs-#{$color}-rgb), 0.8) !important,
+        $hover-border: $value,
+        $active-background: $value,
+        $active-border: $value,
+        $hover-color: $black
+      );
+      --bs-btn-active-color: $black !important;
+      @include rippleEffect($color: $black);
+    } @else {
+      --bs-btn-color: #ffffff !important;
+      --bs-btn-bg: var(--bs-#{$color}) !important;
+      --bs-btn-border-color: var(--bs-#{$color}) !important;
+      --bs-btn-hover-color: #ffffff !important;
+      --bs-btn-hover-bg: color-mix(
+        in srgb,
+        var(--bs-#{$color}) 70%,
+        black
+      ) !important ;
+      --bs-btn-hover-border-color: color-mix(
+        in srgb,
+        var(--bs-#{$color}) 70%,
+        black
+      ) !important;
+      --bs-btn-focus-shadow-rgb: none !important;
+      --bs-btn-active-color: #ffffff !important;
+      --bs-btn-active-bg: color-mix(
+        in srgb,
+        var(--bs-#{$color}) 70%,
+        black
+      ) !important;
+      --bs-btn-active-border-color: color-mix(
+        in srgb,
+        var(--bs-#{$color}) 70%,
+        black
+      ) !important;
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) {
+          --bs-btn-hover-bg: rgba(var(--bs-#{$color}-rgb), 0.8) !important;
+          --bs-btn-hover-border-color: rgba(
+            var(--bs-#{$color}-rgb),
+            0.8
+          ) !important;
+          --bs-btn-active-bg: rgba(var(--bs-#{$color}-rgb), 0.8) !important;
+          --bs-btn-active-border-color: rgba(
+            var(--bs-#{$color}-rgb),
+            0.8
+          ) !important;
+        }
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    --bs-btn-disabled-color: #5c5c5c !important;
+    --bs-btn-disabled-bg: #bebebe !important;
+    --bs-btn-disabled-border-color: #bebebe !important;
+
+    --bs-btn-color: var(--bs-#{$color}) !important;
+    --bs-btn-border-color: var(--bs-#{$color}) !important;
+    --bs-btn-hover-border-color: var(--bs-soft-#{$color}) !important;
+    --bs-btn-active-bg: var(--bs-soft-#{$color}) !important;
+    --bs-btn-active-border-color: var(--bs-soft-#{$color}) !important;
+    &::after {
+      background-color: rgba($white, 0.8) !important;
+    }
+  }
+
+  @if $color == "light" or $color == "white" {
+    .btn-outline-#{$color} {
+      --bs-btn-hover-color: $black !important;
+
+      --bs-btn-active-color: $black !important;
+    }
+  } @else {
+    .btn-outline-#{$color} {
+      --bs-btn-hover-bg: var(--bs-soft-#{$color}) !important;
+      --bs-btn-hover-color: var(--bs-#{$color}) !important;
+      --bs-btn-active-color: var(--bs-#{$color}) !important;
+      --bs-btn-active-bg: var(--bs-soft-#{$color}) !important;
+      --bs-btn-active-border-color: var(--bs-soft-#{$color}) !important;
+    }
+  }
+}

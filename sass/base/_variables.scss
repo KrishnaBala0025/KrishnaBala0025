@@ -1,0 +1,77 @@
+$yellow: #e8b61f;
+$purple: #4718a6;
+$black: #333333;
+$white: #ffffff;
+$light: #ededed;
+$dark: #626262;
+
+$primary: $purple;
+$secondary: $yellow;
+
+$font-size-root: 62.5%;
+
+$enable-negative-margins: true;
+
+// input
+
+$input-btn-padding-y-lg: 1.6rem;
+$input-btn-padding-x-lg: 2rem;
+
+$input-btn-padding-y-sm: 1.4rem;
+$input-btn-padding-x-sm: 2rem;
+
+$input-btn-padding-y: 1.2rem;
+$input-btn-padding-x: 1.4rem;
+$input-btn-focus-box-shadow: none;
+$input-btn-font-size: 1.4rem;
+$input-bg: rgba(var(--bs-primary-rgb), 0.12);
+$input-border-color: rgba(var(--bs-primary-rgb), 0.12);
+$input-focus-border-color: rgba(var(--bs-primary-rgb), 0.3);
+$input-border-width: 0.2rem;
+$input-border-radius: 1rem;
+
+$form-floating-height: 5.6rem;
+$form-floating-line-height: 1.25;
+$form-floating-padding-y: 1.6rem;
+$form-floating-input-padding-t: 0;
+$form-floating-input-padding-b: 0;
+$form-floating-label-opacity: 0;
+$form-floating-label-transform: translateX(100%);
+$form-floating-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+
+// box-shadow
+// $box-shadow: 0 0 .5rem 1rem rgba($black, .15) !default;
+$box-shadow-sm: 0 0.125rem 2rem 0 rgba($black, 0.08);
+$box-shadow-lg: 0.2rem 0.2rem 3rem 0 rgba($black, 0.175);
+
+// modal
+$modal-inner-padding: 1.5rem;
+$modal-content-border-width: 0;
+$modal-content-border-radius: 1rem;
+$modal-backdrop-opacity: 0.6;
+
+// table
+$table-cell-padding-y: 1.5rem;
+$table-cell-padding-x: 1.2rem;
+$table-th-font-weight: bold;
+$table-border-color: #bdbdbd;
+
+//btn
+$btn-padding-y: 1.2rem;
+$btn-padding-x: 2.6rem;
+
+$btn-padding-y-sm: 0.8rem;
+$btn-padding-x-sm: 1.2rem;
+$btn-font-size-sm: 1.4rem;
+
+$btn-padding-y-lg: 1.6rem;
+$btn-padding-x-lg: 3.5rem;
+$btn-font-size-lg: 1.8rem;
+
+$btn-border-radius: 0.8rem;
+$btn-border-radius-sm: 0.6rem;
+$btn-border-radius-lg: 1rem;
+
+// Heading h1 h2 h3 h4 h5 h6
+$headings-margin-bottom: 0;
+$font-family-sans-serif: "Poppins", sans-serif;

@@ -1,0 +1,37 @@
+@import "../_custom.scss";
+// @mixin colorTheme(
+//   $project_primary: #f15a29,
+//   $project_secondary: #28bf61,
+// ) {
+//   --bs-link-color: #{$project_primary};
+//   --bs-link-color-rgb: #{to-rgb($project_primary)};
+//   --bs-link-hover-color: #{$project_primary};
+//   --bs-link-hover-color-rgb: #{to-rgb($project_primary)};
+
+//   --bs-primary: #{$project_primary};
+//   --bs-primary-text: #{$project_primary};
+//   --bs-primary-rgb: #{to-rgb($project_primary)};
+
+//   --bs-secondary: #{$project_secondary};
+//   --bs-secondary-text: #{$project_secondary};
+//   --bs-secondary-rgb: #{to-rgb($project_secondary)};
+// }
+
+// // theme color for network
+// [data-bs-theme="network"] {
+//   @include colorTheme($project_primary: #f15a29, $project_secondary: #28bf61);
+// }
+// // theme color for job
+// [data-bs-theme="job"] {
+//   @include colorTheme($project_primary: #e94e82, $project_secondary: #6c4dde);
+//   // @include colorTheme($project_primary: #5b1eb7, $project_secondary: #179780);
+// }
+
+@each $key, $val in $theme-colors {
+  .fill-#{$key} {
+    fill: var(--bs-#{$key}) !important;
+  }
+  .stroke-#{$key} {
+    fill: var(--bs-#{$key}) !important;
+  }
+}

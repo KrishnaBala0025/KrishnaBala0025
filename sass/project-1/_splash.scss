@@ -1,0 +1,455 @@
+// @import "../../../custom";
+
+.prjct-1_welcome {
+  background: color-mix(in srgb, var(--bs-primary) 40%, black);
+
+  &__abstract {
+    top: 0;
+    right: -4rem;
+    translate: -2rem -4rem;
+    animation: abstract 35s ease-in infinite alternate;
+    max-width: 40rem;
+
+    @keyframes abstract {
+      0% {
+        translate: -4rem -2rem;
+        scale: 1;
+      }
+
+      25% {
+        translate: -3rem -2rem;
+      }
+
+      50% {
+        translate: -3rem -4rem;
+        scale: 1.2;
+      }
+
+      75% {
+        translate: 0 -2rem;
+      }
+
+      100% {
+        translate: -4rem -2rem;
+        scale: 1;
+      }
+    }
+  }
+
+  &__background {
+    & > div {
+      background-color: $primary;
+      width: 40rem;
+      height: 40rem;
+      position: absolute;
+      top: 12%;
+      left: 50%;
+      filter: blur(15rem);
+      translate: -50% 0;
+    }
+  }
+
+  &__animations {
+    position: relative;
+    width: 32rem;
+    height: auto;
+    max-width: 100%;
+
+    * {
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    &__main {
+      width: 100%;
+      height: 100%;
+    }
+
+    .prjct-1_welcome__scale {
+      scale: 0;
+      animation: prjct-1_welcome-scale 1.5s ease-in-out forwards;
+
+      @keyframes prjct-1_welcome-scale {
+        0% {
+          scale: 0;
+        }
+
+        100% {
+          scale: 1;
+        }
+      }
+    }
+
+    .prjct-1_welcome__aniLines {
+      animation: aniLines 1.6s ease-in-out 0.1s forwards;
+      scale: 0;
+
+      @keyframes aniLines {
+        0% {
+          rotate: 45deg;
+          scale: 0;
+        }
+
+        65% {
+          rotate: -15deg;
+          scale: 1.1;
+        }
+
+        100% {
+          rotate: 0;
+          scale: 1;
+        }
+      }
+
+      path {
+        animation: dash 15s linear 0.8s infinite alternate;
+        stroke-dasharray: 5 5;
+
+        @keyframes dash {
+          0% {
+            stroke-dasharray: 2 4;
+          }
+
+          100% {
+            stroke-dasharray: 12 6;
+          }
+        }
+      }
+    }
+
+    // circles
+    @mixin aniCircles($aDelay: 1.5s, $aDurations: 1.7s) {
+      animation: aniCircle $aDurations ease-in-out $aDelay infinite alternate;
+    }
+
+    .prjct-1_welcome__aniCircle {
+      opacity: 0;
+      scale: 0;
+      @include aniCircles($aDurations: 1.6s);
+
+      &.circle-1,
+      &.circle-4 {
+        @include aniCircles($aDurations: 1.5s);
+      }
+
+      &.circle-2,
+      &.circle-5 {
+        @include aniCircles($aDurations: 1.8s);
+      }
+
+      @keyframes aniCircle {
+        0% {
+          scale: 0.2;
+          opacity: 1;
+        }
+
+        100% {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+    }
+
+    // logo
+    .prjct-1_welcome__logoCircle-2 {
+      animation-delay: 0.1s;
+    }
+
+    .prjct-1_welcome__logoCircle-3 {
+      animation-delay: 0.2s;
+    }
+
+    .prjct-1_welcome__logoCircle-4 {
+      animation-delay: 0.3s;
+    }
+
+    // doctor
+    .prjct-1_welcome__doctors {
+      transform: rotate(-15deg);
+      animation: doctorsContainer 0.6s ease-in-out 1.2s forwards;
+    }
+
+    @keyframes doctorsContainer {
+      0% {
+        transform: rotate(-15deg);
+      }
+
+      100% {
+        transform: rotate(0);
+      }
+    }
+
+    @mixin welcomeDoctor($t: -1rem, $s: -1rem, $w: 7.2rem, $ad: 1s) {
+      top: $t;
+      left: $s;
+      width: $w;
+      height: $w;
+      animation-duration: $ad;
+    }
+
+    .prjct-1_welcome__doctor__pic {
+      animation-delay: 0.8s;
+
+      img {
+        border-radius: 50%;
+        animation: anidoctor__img 1.5s ease-in 1.2s infinite alternate;
+
+        @keyframes anidoctor__img {
+          0% {
+            scale: 1;
+            opacity: 1;
+          }
+
+          50% {
+            scale: 0.92;
+            opacity: 1;
+          }
+
+          100% {
+            scale: 0.85;
+            opacity: 1;
+          }
+        }
+      }
+
+      &--1 {
+        @include welcomeDoctor();
+      }
+
+      &--2 {
+        @include welcomeDoctor($w: 2.5rem, $t: 4.5rem, $s: 8.5rem);
+
+        img {
+          animation-delay: 1.26s;
+          animation-duration: 1.66s;
+        }
+      }
+
+      &--3 {
+        @include welcomeDoctor($w: 6.2rem, $t: 2.4rem, $s: 24.4rem);
+
+        img {
+          animation-delay: 1.28s;
+          animation-duration: 1.58s;
+        }
+      }
+
+      &--4 {
+        @include welcomeDoctor($w: 4.2rem, $t: 10.5rem, $s: -1.8rem);
+      }
+
+      &--5 {
+        @include welcomeDoctor($w: 3.2rem, $t: 14.5rem, $s: 27.5rem);
+
+        img {
+          animation-delay: 1.25s;
+          animation-duration: 1.6s;
+        }
+      }
+
+      &--6 {
+        @include welcomeDoctor($w: 8rem, $t: 23rem, $s: -1rem);
+
+        img {
+          animation-delay: 1.22s;
+          animation-duration: 1.68s;
+        }
+      }
+
+      &--7 {
+        @include welcomeDoctor($w: 3.5rem, $t: 26.5rem, $s: 16rem);
+
+        img {
+          animation-delay: 1.24s;
+          animation-duration: 1.56s;
+        }
+      }
+
+      &--8 {
+        @include welcomeDoctor($w: 5.6rem, $t: 22rem, $s: 23rem);
+
+        img {
+          animation-delay: 1.23s;
+          animation-duration: 1.63s;
+        }
+      }
+    }
+  }
+
+  // welcome text
+  &__title {
+    animation: animated-text 2s steps(30, end) 1s 1 normal both;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+  @keyframes animated-text {
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
+  }
+
+  &__content,
+  &__btn {
+    animation: animated-content 1s ease-in-out 1.4s forwards;
+    translate: 0 100%;
+    opacity: 0;
+  }
+
+  &__btn {
+    @include media-breakpoint-up(sm) {
+      max-width: 40rem;
+    }
+  }
+
+  @keyframes animated-content {
+    from {
+      translate: 0 100%;
+      opacity: 0;
+    }
+
+    to {
+      translate: 0 0;
+      opacity: 1;
+    }
+  }
+}
+
+// speciality Selection
+// .prjct-1_specialitySelection__navbar,
+// .prjct-1_specialitySelection__footer {
+//   z-index: 1020;
+//   @include backdrop-filter;
+//   background-color: rgba($white, 0.5);
+// }
+// .prjct-1_specialitySelection__footer .btn {
+//   @include media-breakpoint-up(sm) {
+//     max-width: 40rem;
+//   }
+// }
+
+// speciality Switch
+.prjct-1_specialitySwitch {
+  &__list {
+    max-width: 45rem;
+    &__circle {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    &__content {
+      padding-left: 2.5rem;
+
+      &__bg {
+        width: 0;
+        transition: all 0.3s ease-in;
+      }
+    }
+
+    &__icon {
+      width: 2.6rem;
+      height: 2.6rem;
+
+      &__dots {
+        animation: wave 1s linear infinite;
+        border-radius: 2px;
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        background-color: $white;
+        translate: 0 -50%;
+        top: 50%;
+
+        &:nth-child(2) {
+          animation-delay: -0.8s;
+          left: 50%;
+          translate: -50% -50%;
+        }
+
+        &:nth-child(3) {
+          animation-delay: -0.6s;
+          right: 0;
+          left: auto;
+        }
+      }
+
+      @keyframes wave {
+        0%,
+        60%,
+        100% {
+          transform: initial;
+        }
+
+        30% {
+          transform: translateY(-1rem);
+        }
+      }
+    }
+
+    &__check {
+      translate: -50% -50%;
+      rotate: 30deg;
+      scale: 0;
+      opacity: 0;
+      transition: all 1.2s ease-in-out;
+    }
+
+    li {
+      position: relative;
+      padding-left: 6rem;
+      translate: 0 3rem;
+      opacity: 0;
+      transition: all 0.3s ease-in;
+      scale: 0.8;
+      min-height: 7rem;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+
+      &.prjct-1_specialitySwitch-li--animationStart {
+        translate: 0;
+        opacity: 1;
+        scale: 1;
+      }
+
+      &.prjct-1_specialitySwitch-li--animationEnd {
+        .prjct-1_specialitySwitch__list__icon {
+          width: 4px;
+          height: 4px;
+          opacity: 0;
+
+          &__dots {
+            animation-play-state: paused;
+          }
+        }
+
+        .prjct-1_specialitySwitch__list__check {
+          rotate: 0deg;
+          scale: 1.2;
+          opacity: 1;
+        }
+
+        .prjct-1_specialitySwitch__list__content {
+          &__bg {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    background: var(--bs-primary);
+    @include media-breakpoint-up(md) {
+      border-radius: $border-radius-xl $border-radius-xl 0 0;
+    }
+  }
+}

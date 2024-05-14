@@ -1,0 +1,6 @@
+// line-clamp
+@for $i from 1 through 4 {
+  .line-clamp-#{$i} {
+    @include lineClamp($i);
+  }
+}

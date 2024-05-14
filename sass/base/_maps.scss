@@ -1,0 +1,18 @@
+$custome-font-size: (
+  36: $font-size-base * 3.6,
+  48: $font-size-base * 4.8,
+);
+$font-sizes: map-merge($custome-font-size, $font-sizes);
+
+$custome-spacers: (
+  20: $spacer * 2,
+  50: $spacer * 5,
+  70: $spacer * 7,
+  90: $spacer * 9,
+);
+$spacers: map-merge($custome-spacers, $spacers);
+
+$custome-colors: (
+  "white": $white,
+);
+$theme-colors: map-merge($custome-colors, $theme-colors);

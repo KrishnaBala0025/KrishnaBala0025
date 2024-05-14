@@ -1,0 +1,82 @@
+@use "sass:math";
+@mixin translateXY {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+@mixin translateY {
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+@mixin translateX {
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+// button common mixins
+@mixin cmnBrdrBtn($c: var(--bs-primary)) {
+  border-width: 1px;
+  border-style: solid;
+  color: $c;
+  border-color: $c;
+  // text-decoration: none;
+
+  &:hover {
+    background-color: $c;
+    color: $white;
+    // text-decoration: none;
+  }
+}
+
+@mixin transition($time: 0.3s, $func: ease-in-out) {
+  transition: all $time ease-in-out;
+}
+
+@mixin displayProp($justifyContent: space-between, $align-items: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $justifyContent;
+}
+
+@mixin rippleEffect($color: #ffffff, $width: 100%, $height: auto) {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    background: $color;
+    display: block;
+    position: absolute;
+    width: $width;
+    height: $height;
+    aspect-ratio: 1/1;
+    border-radius: math.div($width, 2);
+    @include translateXY();
+    opacity: 0;
+    @include transition($time: 0.5s);
+    z-index: 1;
+  }
+  &:active:after {
+    padding: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    opacity: 0.3;
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+}
+
+@mixin lineClamp($line-Clamp: 2) {
+  -webkit-line-clamp: $line-Clamp;
+  -webkit-box-orient: vertical;
+  line-clamp: $line-Clamp;
+  box-orient: vertical;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: end;
+  display: -webkit-box;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

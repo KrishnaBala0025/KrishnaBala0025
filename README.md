@@ -1,8 +1,22 @@
-- 👋 Hi, I’m @KrishnaBala
+## Bootstrap 5.3 Customization with Sass
 
-Hi, I’m @KrishnaBala0025
-- 👀 I’m interested in UI/UX design and development, with over 8 years of experience.
-- 🌱 I’m currently learning new techniques and tools to stay updated in the ever-evolving field of UI/UX.
-- 💞️ I’m looking to collaborate on projects that require expertise in UI/UX design and front-end development.
-- 📫  You can reach out to me via email at krishnabalawork@gmail.com or connect with me on LinkedIn.
+This project offers a customized version of Bootstrap 5.3, optimized for managing large-scale projects and providing an easy way to change theme colors using Sass variables.
 
+
+## Technologies Used
+  Frontend: HTML, Bootstrap 5.3, Sass
+
+  Other: Node.js (for compiling Sass)
+
+## Getting Started
+
+to install dependencies
+
+```bash
+npm i
+```
+Compile Sass using
+
+```bash
+npm run compile:sass
+```

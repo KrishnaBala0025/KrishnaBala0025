@@ -1,0 +1,10 @@
+@include color-mode(dark) {
+  .mainHeader {
+    background-color: $black !important;
+  }
+}
+.selectTheme {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}

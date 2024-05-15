@@ -1,4 +1,26 @@
 @import "../_custom.scss";
+body {
+  font-size: $h4-font-size;
+
+  // some times plugins overwrite font-family
+  // * {
+  //   font-family: $font-family-sans-serif !important;
+  //   font-display: auto;
+  // }
+}
+
+html {
+  font-size: 62.5% !important;
+  @include media-breakpoint-down(sm) {
+    font-size: 58.5% !important;
+  }
+  @include media-breakpoint-between(sm, md) {
+    font-size: 51.5% !important;
+  }
+  @include media-breakpoint-between(md, xl) {
+    font-size: 50% !important;
+  }
+}
 
 .overlay {
   width: 100%;
@@ -8,7 +30,10 @@
   left: 0px;
   z-index: 1;
 }
-
+i[class^="flaticon-"]:before,
+i[class*=" flaticon-"]:before {
+  display: block;
+}
 p:last-child {
   margin: 0;
 }
@@ -16,7 +41,14 @@ p:last-child {
 a {
   text-decoration: none !important;
 }
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: $line-height-base;
+}
 a,
 svg,
 input,

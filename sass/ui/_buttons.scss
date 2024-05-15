@@ -1,8 +1,6 @@
 // @import '../custom';
 
 .btn {
-  @include rippleEffect;
-
   &:focus-visible {
     box-shadow: none !important;
   }
@@ -15,6 +13,7 @@
     --bs-btn-disabled-border-color: #bebebe !important;
 
     @if $color == "light" or $color == "white" {
+      @include rippleEffect($color: $black);
       @include button-variant(
         $value,
         $value,
@@ -25,8 +24,8 @@
         $hover-color: $black
       );
       --bs-btn-active-color: $black !important;
-      @include rippleEffect($color: $black);
     } @else {
+      @include rippleEffect();
       --bs-btn-color: #ffffff !important;
       --bs-btn-bg: var(--bs-#{$color}) !important;
       --bs-btn-border-color: var(--bs-#{$color}) !important;
@@ -53,6 +52,7 @@
         var(--bs-#{$color}) 70%,
         black
       ) !important;
+
       @media not all and (min-resolution: 0.001dpcm) {
         @supports (-webkit-appearance: none) {
           --bs-btn-hover-bg: rgba(var(--bs-#{$color}-rgb), 0.8) !important;
@@ -79,14 +79,11 @@
 
     --bs-btn-color: var(--bs-#{$color}) !important;
     --bs-btn-border-color: var(--bs-#{$color}) !important;
-    --bs-btn-hover-border-color: var(--bs-soft-#{$color}) !important;
-    --bs-btn-active-bg: var(--bs-soft-#{$color}) !important;
-    --bs-btn-active-border-color: var(--bs-soft-#{$color}) !important;
-    &::after {
-      background-color: rgba($white, 0.8) !important;
-    }
+    --bs-btn-hover-border-color: var(--bs-#{$color}-bg-subtle) !important;
+    --bs-btn-active-bg: var(--bs-#{$color}-bg-subtle) !important;
+    --bs-btn-active-border-color: var(--bs-#{$color}-bg-subtle) !important;
+    @include rippleEffect($color: $black);
   }
-
   @if $color == "light" or $color == "white" {
     .btn-outline-#{$color} {
       --bs-btn-hover-color: $black !important;
@@ -95,11 +92,11 @@
     }
   } @else {
     .btn-outline-#{$color} {
-      --bs-btn-hover-bg: var(--bs-soft-#{$color}) !important;
+      --bs-btn-hover-bg: var(--bs-#{$color}-bg-subtle) !important;
       --bs-btn-hover-color: var(--bs-#{$color}) !important;
       --bs-btn-active-color: var(--bs-#{$color}) !important;
-      --bs-btn-active-bg: var(--bs-soft-#{$color}) !important;
-      --bs-btn-active-border-color: var(--bs-soft-#{$color}) !important;
+      --bs-btn-active-bg: var(--bs-#{$color}-bg-subtle) !important;
+      --bs-btn-active-border-color: var(--bs-#{$color}-bg-subtle) !important;
     }
   }
 }

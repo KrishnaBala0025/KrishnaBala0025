@@ -1,19 +1,22 @@
 $yellow: #e8b61f;
-$purple: #4718a6;
-$black: #333333;
+$purple: #5621c1;
+$green: #28bf61;
+$black: #1e1e1e;
 $white: #ffffff;
 $light: #ededed;
 $dark: #626262;
 
 $primary: $purple;
-$secondary: $yellow;
+$secondary: $green;
 
 $font-size-root: 62.5%;
 
 $enable-negative-margins: true;
+//navbar
+$navbar-padding-y: 1.6rem;
+$navbar-padding-x: null;
 
 // input
-
 $input-btn-padding-y-lg: 1.6rem;
 $input-btn-padding-x-lg: 2rem;
 
@@ -40,21 +43,18 @@ $form-floating-label-transform: translateX(100%);
 $form-floating-transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
 // box-shadow
-// $box-shadow: 0 0 .5rem 1rem rgba($black, .15) !default;
-$box-shadow-sm: 0 0.125rem 2rem 0 rgba($black, 0.08);
-$box-shadow-lg: 0.2rem 0.2rem 3rem 0 rgba($black, 0.175);
 
 // modal
-$modal-inner-padding: 1.5rem;
-$modal-content-border-width: 0;
-$modal-content-border-radius: 1rem;
-$modal-backdrop-opacity: 0.6;
+// $modal-inner-padding: 1.5rem;
+// $modal-content-border-width: 0;
+// $modal-content-border-radius: 1rem;
+// $modal-backdrop-opacity: 0.6;
 
 // table
-$table-cell-padding-y: 1.5rem;
-$table-cell-padding-x: 1.2rem;
-$table-th-font-weight: bold;
-$table-border-color: #bdbdbd;
+// $table-cell-padding-y: 1.5rem;
+// $table-cell-padding-x: 1.2rem;
+// $table-th-font-weight: bold;
+// $table-border-color: var(--bs-primary-rgb);
 
 //btn
 $btn-padding-y: 1.2rem;

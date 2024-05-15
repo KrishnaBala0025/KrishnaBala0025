@@ -4,21 +4,120 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Preconnect to the Google Fonts and font static servers -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- link Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body></body>
-    <div
-      class="bg-black vh-100 d-flex justify-content-center align-items-center gap-3 p-4"
-    >
-      <button class="btn btn-primary">
-        <img
-          class="icon-size-20"
-          src="https://i.pinimg.com/564x/c7/ab/cd/c7abcd3ce378191a3dddfa4cdb2be46f.jpg"
-          alt=""
+  <body>
+    <nav class="navbar bg-white fixed-top px-md-20 px-4 mainHeader">
+      <a
+        class="navbar-brand fs-1 fw-semibold p-0 m-0 d-inline-flex align-items-center gap-3 flex-shrink-0"
+      >
+        <!-- logo image -->
+        <span
+          class="icon-size-32 rounded-circle border border-4 border-primary-subtle position-relative"
+        >
+          <span
+            class="position-absolute translate-middle top-50 start-50 border-4 border-primary border icon-size-20 rounded-circle"
+          ></span>
+        </span>
+        My Logo
+        <!-- logo image -->
+      </a>
+
+      <div class="form-check form-switch ms-sm-4 order-2 order-sm-3">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="darkMode"
+          data-bs-theme="light"
         />
-        Project 1
-      </button>
-      <button class="btn btn-white">Project 2</button>
+        <label class="form-check-label" for="darkMode">Dark Mode</label>
+      </div>
+
+      <div
+        class="ms-sm-auto order-3 order-sm-2 selectTheme py-sm-0 py-3 mt-sm-0 mt-3"
+      >
+        <div class="px-4 px-sm-0 d-flex gap-3 justify-content-evenly">
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="colorTheme"
+              id="defult"
+              value="defult"
+              checked
+            />
+            <label class="form-check-label" for="defult">default</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="colorTheme"
+              id="network"
+              value="network"
+            />
+            <label class="form-check-label" for="network">Theme 1</label>
+          </div>
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="colorTheme"
+              id="job"
+              value="job"
+            />
+            <label class="form-check-label" for="job">Theme 2</label>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="pageContent d-flex flex-column min-vh-100">
+      <section
+        class="d-flex justify-content-center align-items-center py-sm-50 py-20 flex-grow-1"
+      >
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12 text-center">
+              <h1 class="fs-36 fw-bold mb-20">
+                Transform Your Design with
+                <span class="typing-effect d-block text-primary"
+                  >Bootstrap 5.3 Mastery</span
+                >
+              </h1>
+              <p>
+                Every UX developer needs a solid setup to kickstart new HTML
+                projects. This customized version of Bootstrap 5.3 provides just
+                that, with enhanced performance and scalability. Leverage Sass
+                for effortless theme customization and maintain a clean,
+                structured codebase. Easily manage and update global classes,
+                ensuring your projects stay efficient and adaptable.
+              </p>
+              <div
+                class="d-flex gap-3 flex-wrap mt-5 justify-content-sm-center"
+              >
+                <button class="btn btn-primary flex-grow-1 flex-sm-grow-0">
+                  Get Started
+                </button>
+                <button
+                  class="btn btn-outline-secondary flex-grow-1 flex-sm-grow-0"
+                >
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

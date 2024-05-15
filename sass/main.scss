@@ -19,9 +19,16 @@
 @import "./_custom.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./base/_colors.scss";
+
+// global styles
 @import "./ui/_icon.scss";
 @import "./ui/_typography.scss";
 @import "./ui/_buttons.scss";
 @import "./ui/_global.scss";
 
-@import "./project-1/_splash.scss";
+// global components
+// @import "./components/_checkbox_radio.scss";
+@import "./components/layout/_header.scss";
+
+// my-pages
+// @import "./pages/_landing.scss";

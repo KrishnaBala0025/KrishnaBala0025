@@ -1,31 +1,41 @@
 @import "../_custom.scss";
-// @mixin colorTheme(
-//   $project_primary: #f15a29,
-//   $project_secondary: #28bf61,
-// ) {
-//   --bs-link-color: #{$project_primary};
-//   --bs-link-color-rgb: #{to-rgb($project_primary)};
-//   --bs-link-hover-color: #{$project_primary};
-//   --bs-link-hover-color-rgb: #{to-rgb($project_primary)};
+@mixin colorTheme(
+  $project_primary: #{$primary},
+  $project_secondary: #{$secondary}
+) {
+  --bs-link-color: #{$project_primary};
+  --bs-link-color-rgb: #{to-rgb($project_primary)};
+  --bs-link-hover-color: #{$project_primary};
+  --bs-link-hover-color-rgb: #{to-rgb($project_primary)};
 
-//   --bs-primary: #{$project_primary};
-//   --bs-primary-text: #{$project_primary};
-//   --bs-primary-rgb: #{to-rgb($project_primary)};
+  --bs-primary: #{$project_primary};
+  --bs-primary-text: #{$project_primary};
+  --bs-primary-rgb: #{to-rgb($project_primary)};
 
-//   --bs-secondary: #{$project_secondary};
-//   --bs-secondary-text: #{$project_secondary};
-//   --bs-secondary-rgb: #{to-rgb($project_secondary)};
-// }
+  --bs-primary-bg-subtle: #{tint-color($project_primary, 80%)};
+  --bs-primary-border-subtle: #{tint-color($project_primary, 80%)};
 
-// // theme color for network
-// [data-bs-theme="network"] {
-//   @include colorTheme($project_primary: #f15a29, $project_secondary: #28bf61);
-// }
-// // theme color for job
-// [data-bs-theme="job"] {
-//   @include colorTheme($project_primary: #e94e82, $project_secondary: #6c4dde);
-//   // @include colorTheme($project_primary: #5b1eb7, $project_secondary: #179780);
-// }
+  --bs-secondary: #{$project_secondary};
+  --bs-secondary-text: #{$project_secondary};
+  --bs-secondary-rgb: #{to-rgb($project_secondary)};
+  --bs-secondary-bg-subtle: #{tint-color($project_secondary, 80%)} !important;
+  --bs-secondary-border-subtle: #{tint-color($project_secondary, 80%)} !important;
+  @include color-mode(dark) {
+    --bs-secondary-bg-subtle: #{tint-color($project_secondary, 80%)} !important;
+    --bs-secondary-border-subtle: #{tint-color($project_secondary, 80%)} !important;
+    --bs-primary-bg-subtle: #{tint-color($project_primary, 80%)};
+    --bs-primary-border-subtle: #{tint-color($project_primary, 80%)};
+  }
+}
+
+// theme color for network/project-1
+[data-bs-theme="network"] {
+  @include colorTheme($project_primary: #0eb3a3, $project_secondary: #668436);
+}
+// theme color for job/project-2
+[data-bs-theme="job"] {
+  @include colorTheme($project_primary: #e94e82, $project_secondary: #59359a);
+}
 
 @each $key, $val in $theme-colors {
   .fill-#{$key} {

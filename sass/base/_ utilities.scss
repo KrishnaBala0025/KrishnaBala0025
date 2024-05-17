@@ -14,5 +14,16 @@ $utilities: map-merge(
           responsive: true,
         )
       ),
+    "min-viewport-height":
+      map-merge(
+        map-get($utilities, "min-viewport-height"),
+        (
+          responsive: true,
+          values: (
+            0: 0,
+            100: 100vh,
+          ),
+        )
+      ),
   )
 );

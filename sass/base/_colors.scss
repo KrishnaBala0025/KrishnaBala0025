@@ -42,6 +42,24 @@
     fill: var(--bs-#{$key}) !important;
   }
   .stroke-#{$key} {
-    fill: var(--bs-#{$key}) !important;
+    stroke: var(--bs-#{$key}) !important;
+  }
+  @include color-mode(dark) {
+    @if $key == "dark" or $key == "black" {
+      .fill-#{$key} {
+        fill: $white !important;
+      }
+      .stroke-#{$key} {
+        stroke: $white !important;
+      }
+    }
+    // @else if $key == "white" or $key == "white" {
+    //   .fill-#{$key} {
+    //     fill: $white !important;
+    //   }
+    //   .stroke-#{$key} {
+    //     stroke: $white !important;
+    //   }
+    // }
   }
 }

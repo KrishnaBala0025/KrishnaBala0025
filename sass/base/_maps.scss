@@ -14,5 +14,6 @@ $spacers: map-merge($custome-spacers, $spacers);
 
 $custome-colors: (
   "white": $white,
+  "black": $black,
 );
 $theme-colors: map-merge($custome-colors, $theme-colors);

@@ -28,13 +28,13 @@
   }
 }
 
-// theme color for network/project-1
-[data-bs-theme="network"] {
-  @include colorTheme($project_primary: #0eb3a3, $project_secondary: #668436);
+// theme color for theme-color-1/project-1
+[data-bs-theme="theme-color-1"] {
+  @include colorTheme($project_primary: #21b3a3, $project_secondary: #82ac3f);
 }
-// theme color for job/project-2
-[data-bs-theme="job"] {
-  @include colorTheme($project_primary: #e94e82, $project_secondary: #59359a);
+// theme color for theme-color-2/project-2
+[data-bs-theme="theme-color-2"] {
+  @include colorTheme($project_primary: #c81438, $project_secondary: #e0b637);
 }
 
 @each $key, $val in $theme-colors {
@@ -42,6 +42,24 @@
     fill: var(--bs-#{$key}) !important;
   }
   .stroke-#{$key} {
-    fill: var(--bs-#{$key}) !important;
+    stroke: var(--bs-#{$key}) !important;
+  }
+  @include color-mode(dark) {
+    @if $key == "dark" or $key == "black" {
+      .fill-#{$key} {
+        fill: $white !important;
+      }
+      .stroke-#{$key} {
+        stroke: $white !important;
+      }
+    }
+    // @else if $key == "white" or $key == "white" {
+    //   .fill-#{$key} {
+    //     fill: $white !important;
+    //   }
+    //   .stroke-#{$key} {
+    //     stroke: $white !important;
+    //   }
+    // }
   }
 }

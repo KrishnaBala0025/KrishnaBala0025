@@ -18,6 +18,8 @@
 
 @import "./_custom.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 @import "./base/_colors.scss";
 
 // global styles
@@ -31,4 +33,4 @@
 @import "./components/layout/_header.scss";
 
 // my-pages
-// @import "./pages/_landing.scss";
+@import "./pages/_splash.scss";

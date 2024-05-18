@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body data-bs-theme="dark">
     <div
       class="pageContent d-flex align-items-md-center min-vh-100 overflow-hidden position-relative splash px-md-0 px-3"
     >
@@ -29,7 +29,7 @@
           class="row flex-column flex-md-row justify-content-center align-items-md-center row-gap-50 min-vh-md-0 min-vh-100"
         >
           <div
-            class="col col-md-6 d-flex align-items-center justify-content-center flex-md-grow-1"
+            class="col col-md-5 col-lg-6 d-flex align-items-center justify-content-center flex-md-grow-1"
           >
             <div
               class="splash__animations d-flex flex-1 p-4 align-items-center justify-content-center"
@@ -277,15 +277,19 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-12 text-center text-md-start pb-md-0 pb-5">
+          <div
+            class="col-md-5 col-lg-6 col-12 text-center text-md-start pb-md-0 pb-5"
+          >
             <div
               class="splash__content d-flex flex-column align-items-md-start"
             >
-              <h1 class="fs-2 fw-bold mb-20">
-                Transform Your Design with
-                <span class="d-block splash__title fs-36"
-                  >Bootstrap 5.3 Mastery</span
-                >
+              <h1 class="fs-2 fw-bold mb-md-20 mb-4">
+                <span class="d-block text-secondary">
+                  Transform Your Design with
+                </span>
+                <span class="d-block splash__title fs-36">
+                  Bootstrap 5.3 Mastery
+                </span>
               </h1>
               <p class="line-clamp-3">
                 Every UX developer needs a solid setup to kickstart new HTML
@@ -296,21 +300,24 @@
                 ensuring your projects stay efficient and adaptable.
               </p>
               <div
-                class="d-flex gap-4 flex-wrap mt-5 justify-content-sm-center"
+                class="d-flex gap-4 flex-wrap mt-md-5 mt-3 justify-content-sm-center"
               >
-                <button class="btn btn-white flex-grow-1 flex-sm-grow-0 fs-3">
-                  Lets Get Started
-                </button>
                 <button
-                  class="btn btn-white flex-shrink-0 fs-3 position-relative"
+                  id="theme-switcher"
+                  class="btn btn-primary flex-grow-1 flex-sm-grow-0 fs-3 change-themeBtn"
                 >
+                  Change Theme
+                </button>
+                <div class="position-relative">
                   <input
-                    class="form-check-input position-absolute top-0 start-0 w-100 h-100 z-2"
+                    class="form-check-input position-absolute top-0 start-0 w-100 h-100 z-2 m-0 cursor-pointer opacity-0"
                     type="checkbox"
                     id="darkMode"
                   />
-                  Dark Mode
-                </button>
+                  <button class="btn btn-white flex-shrink-0 fs-3 px-20">
+                    Bl
+                  </button>
+                </div>
               </div>
             </div>
           </div>

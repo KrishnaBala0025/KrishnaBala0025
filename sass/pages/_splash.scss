@@ -1,9 +1,14 @@
 @include color-mode(dark) {
   .splash {
-    background: color-mix(in srgb, $black 80%, var(--bs-primary));
+    background-color: color-mix(in srgb, var(--bs-primary) 30%, $black);
     &__background {
       & > div {
         background-color: color-mix(in srgb, var(--bs-primary) 60%, $black);
+      }
+    }
+    &__title {
+      .text-secondary {
+        color: $white;
       }
     }
   }

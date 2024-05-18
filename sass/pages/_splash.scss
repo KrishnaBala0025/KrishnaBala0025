@@ -145,13 +145,13 @@
       animation-delay: 0.3s;
     }
 
-    // doctor
-    .splash__doctors {
+    // skills
+    .splash__skills {
       transform: rotate(-15deg);
-      animation: doctorsContainer 0.6s ease-in-out 1.2s forwards;
+      animation: skillsContainer 0.6s ease-in-out 1.2s forwards;
     }
 
-    @keyframes doctorsContainer {
+    @keyframes skillsContainer {
       0% {
         transform: rotate(-15deg);
       }
@@ -161,7 +161,7 @@
       }
     }
 
-    @mixin welcomeDoctor($t: -1rem, $s: -1rem, $w: 7.2rem, $ad: 1s) {
+    @mixin splash__skills__pic($t: -1rem, $s: -1rem, $w: 7.2rem, $ad: 1s) {
       top: $t;
       left: $s;
       width: $w;
@@ -169,37 +169,36 @@
       animation-duration: $ad;
     }
 
-    .splash__doctor__pic {
+    .splash__skills__pic {
       animation-delay: 0.8s;
 
       img {
-        border-radius: 50%;
-        animation: anidoctor__img 1.5s ease-in 1.2s infinite alternate;
+        animation: aniskills__img 3s ease-in 1.2s infinite alternate;
 
-        @keyframes anidoctor__img {
+        @keyframes aniskills__img {
           0% {
-            scale: 1;
+            scale: 0.8;
             opacity: 1;
           }
 
           50% {
-            scale: 0.92;
+            scale: 0.85;
             opacity: 1;
           }
 
           100% {
-            scale: 0.85;
+            scale: 0.8;
             opacity: 1;
           }
         }
       }
 
       &--1 {
-        @include welcomeDoctor();
+        @include splash__skills__pic();
       }
 
       &--2 {
-        @include welcomeDoctor($w: 2.5rem, $t: 4.5rem, $s: 8.5rem);
+        @include splash__skills__pic($w: 2.5rem, $t: 4.5rem, $s: 8.5rem);
 
         img {
           animation-delay: 1.26s;
@@ -208,7 +207,7 @@
       }
 
       &--3 {
-        @include welcomeDoctor($w: 6.2rem, $t: 2.4rem, $s: 24.4rem);
+        @include splash__skills__pic($w: 6.2rem, $t: 2.4rem, $s: 24.4rem);
 
         img {
           animation-delay: 1.28s;
@@ -217,11 +216,11 @@
       }
 
       &--4 {
-        @include welcomeDoctor($w: 4.2rem, $t: 10.5rem, $s: -1.8rem);
+        @include splash__skills__pic($w: 4.2rem, $t: 10.5rem, $s: -1.8rem);
       }
 
       &--5 {
-        @include welcomeDoctor($w: 3.2rem, $t: 14.5rem, $s: 27.5rem);
+        @include splash__skills__pic($w: 3.2rem, $t: 14.5rem, $s: 27.5rem);
 
         img {
           animation-delay: 1.25s;
@@ -230,7 +229,7 @@
       }
 
       &--6 {
-        @include welcomeDoctor($w: 8rem, $t: 23rem, $s: -1rem);
+        @include splash__skills__pic($w: 8rem, $t: 23rem, $s: -1rem);
 
         img {
           animation-delay: 1.22s;
@@ -239,7 +238,7 @@
       }
 
       &--7 {
-        @include welcomeDoctor($w: 3.5rem, $t: 26.5rem, $s: 16rem);
+        @include splash__skills__pic($w: 3.5rem, $t: 26.5rem, $s: 16rem);
 
         img {
           animation-delay: 1.24s;
@@ -248,7 +247,7 @@
       }
 
       &--8 {
-        @include welcomeDoctor($w: 5.6rem, $t: 22rem, $s: 23rem);
+        @include splash__skills__pic($w: 5.6rem, $t: 22rem, $s: 23rem);
 
         img {
           animation-delay: 1.23s;
@@ -266,10 +265,10 @@
     opacity: 0;
   }
   &__title {
-    // animation: animated-text 2s steps(30, end) 1s 1 normal both;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
+    // animation: animated-text 2s steps(30, end) 1.2s 1 normal both;
+    // white-space: nowrap;
+    // overflow: hidden;
+    // position: relative;
   }
 
   @keyframes animated-text {

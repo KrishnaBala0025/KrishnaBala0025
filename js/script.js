@@ -6,11 +6,17 @@ $(document).ready(function() {
       if(theme === 'dark') {
         $('body').attr('data-bs-theme','');
       }
-      if ($(this).next().children().hasClass('bi-cloud-sun-fill')) {
-        $(this).next().children().removeClass('bi-cloud-sun-fill').addClass('bi-moon-stars-fill');
+      var $text = $(this).next('button');
+      if ($text.text() === 'Dark Mode') {
+        $text.text('Light Mode');
     } else {
-      $(this).next().children().removeClass('bi-moon-stars-fill').addClass('bi-cloud-sun-fill');
+        $text.text('Dark Mode');
     }
+    //   if ($(this).next().children().hasClass('bi-cloud-sun-fill')) {
+    //     $(this).next().children().removeClass('bi-cloud-sun-fill').addClass('bi-moon-stars-fill');
+    // } else {
+    //   $(this).next().children().removeClass('bi-moon-stars-fill').addClass('bi-cloud-sun-fill');
+    // }
       
     });
 
